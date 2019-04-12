@@ -15,23 +15,22 @@ ActiveRecord::Schema.define(version: 2019_04_12_132525) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "bases", force: :cascade do |t|
+  create_table "meal_categories", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "pizzas", force: :cascade do |t|
+  create_table "meals", force: :cascade do |t|
     t.string "name"
     t.string "ingredient", array: true
     t.integer "price_cents"
     t.string "photo"
     t.string "description"
-    t.bigint "base_id"
-    t.boolean "chausson", default: false
+    t.bigint "meal_category_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["base_id"], name: "index_pizzas_on_base_id"
+    t.index ["meal_category_id"], name: "index_meals_on_meal_category_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -46,5 +45,5 @@ ActiveRecord::Schema.define(version: 2019_04_12_132525) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "pizzas", "bases", column: "base_id"
+  add_foreign_key "meals", "meal_categories"
 end

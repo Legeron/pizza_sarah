@@ -14,3 +14,27 @@ a:hover {
 .border-top-radius-10px {
   border-radius: 10px 10px 0px 0px;
 }
+.trapezoid {
+  z-index: 2000;
+  border-bottom: 40px solid $info;
+  border-left: 40px solid transparent;
+  border-right: 40px solid transparent;
+  font-size: 12px;
+  font-weight: bold;
+  color: black;
+  height: 0;
+  width: 200px;
+  position: absolute;
+  top: 36px;
+  left: -44px;
+  transform: rotate(-45deg);
+  text-align: center;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  p {
+    margin: 2px 0 2px;
+  }
+}
+.frame-200px {
+  height: 200px;
+  width: 200px;
+}

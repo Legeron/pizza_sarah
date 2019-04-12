@@ -1,5 +1,5 @@
-class Pizza < ApplicationRecord
-  belongs_to :base
+class Meal < ApplicationRecord
+  belongs_to :meal_category
   validates :name, presence: true
   validates :name, uniqueness: true
 
