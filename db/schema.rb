@@ -23,9 +23,10 @@ ActiveRecord::Schema.define(version: 2019_04_12_132525) do
 
   create_table "pizzas", force: :cascade do |t|
     t.string "name"
-    t.string "ingredient"
+    t.string "ingredient", array: true
     t.integer "price_cents"
     t.string "photo"
+    t.string "description"
     t.bigint "base_id"
     t.boolean "chausson", default: false
     t.datetime "created_at", null: false

@@ -1,2 +1,47 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="bg-white d-flex align-items-center shadow position-fixed w-100" style=" height: 70px; z-index: 20">
+  <div class="px-5">
+    <%= link_to '/' do %>
+      <%= image_tag 'logo-pizza-de-buch.jpg', alt: 'pizza', style: 'height: 60px' %>
+    <% end %>
+  </div>
+</div>
+<div style="height: 70px"></div>
+<div class="bg-dark" style='min-height: 100vh'>
+<div class="container py-3">
+    <% @pizzas.each do |pizza| %>
+      <div class= "mx-auto" style= 'max-width: 700px'>
+        <%= link_to pizza_path(pizza)  do %>
+          <div class="row bg-info border-radius-10px py-2 my-2" >
+            <div class="col-3">
+              <%= cl_image_tag pizza.photo, class: 'w-100 border-radius-10px' %>
+            </div>
+              <div class= "col-9">
+                <p class= 'text-dark'><%= pizza.name.capitalize %></p>
+                <p class= 'text-secondary'><%= pizza.ingredient.join(', ') %></p>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>
+</div>
+<div class="bg-dark">
+  <div class="container">
+    <div class="row py-5">
+      <% @pizzas.each do |pizza|%>
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="card border-radius-10px">
+            <%= link_to "", pizza_path(pizza), class: "link_invisible" %>
+            <%= cl_image_tag pizza.photo, class: 'border-top-radius-10px w-100' %>
+            <div class="card-body py-3">
+              <h5 class="font-size-12px-lg-16px text-grey "><%= pizza.name %></h5>
+              <p class="font-size-12px-lg-16px text-grey "><%= pizza.ingredient.join(', ') %></p>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
