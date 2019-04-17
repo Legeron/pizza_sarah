@@ -24,7 +24,6 @@ export default class extends Controller {
     this.restartTarget.classList.add('d-none')
     this.hpTarget.classList.remove('text-danger')
     this.hpTarget.classList.add('text-success')
-
   }
 }
 
