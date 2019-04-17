@@ -6,7 +6,6 @@
   </div>
 </div>
 <div style=" height: 70px"></div>
-<div class="active"></div>
 <div class="bg-dark">
   <div class="d-flex align-items-center bg-white">
     <div class="container">
@@ -73,5 +72,11 @@
         <% end %>
       </div>
     </div>
+  </div>
+ <!--  Below useless code to use data-target -->
+  <div class="container " data-controller='fight'>
+    <h2 class='mb-3 text-white'>Click on 'K' button</h2>
+    <p class= 'text-success mb-3' data-target= 'fight.hp'>100</p>
+    <button class='bg-success text-white px-3 py-2 rounded' data-action='click->fight#kick'>K</button>
   </div>
 </div>
