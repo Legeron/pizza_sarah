@@ -6,48 +6,52 @@
   </div>
 </div>
 <div style="height: 70px"></div>
-<div class="bg-dark" style='min-height: 100vh'>
-<div class="container py-3">
-    <% @pizzas.each do |pizza| %>
-      <div class= "mx-auto" style= 'max-width: 700px'>
-        <%= link_to pizza_path(pizza)  do %>
-          <div class="row bg-info border-radius-10px py-2 my-2" >
-            <div class="col-2">
-              <%= cl_image_tag pizza.photo, class: 'w-100 border-radius-10px' %>
-            </div>
-              <div class= "col-9">
-                <p class= 'text-dark mb-0'><%= pizza.name.capitalize %></p>
-                <p class= 'text-secondary'><%= pizza.ingredient.join(', ') %></p>
+<div class="bg-dark">
+  <div class="d-flex align-items-center bg-white">
+    <div class="container">
+      <button class= "m-2" id="pizza" data-controller='list' data-action='list#display'>Pizza</button>
+      <button class= "m-2" id= 'pasta' data-controller='list' data-action='list#display'>Pâte</button>
+      <button class= "m-2">Dessert</button>
+    </div>
+  </div>
+  <div class="container display">
+    <div id="pizza-target" class='active'>
+      <div class="row py-5">
+        <% @pizzas.each do |pizza|%>
+          <div class="col-12 col-md-6 col-lg-4 p-0 position-relative overflow-hidden">
+            <div class="trapezoid"><p class='mt-2 text-white'><%= pizza.price %>€</p></div>
+            <div class="p-1 ">
+              <div class="card">
+                <%= link_to "", meal_path(pizza), class: "link_invisible" %>
+                <%= cl_image_tag pizza.photo, class: 'card-img-top w-100 rogner', height: '200px' %>
+                <div class="card-body min-height-128px py-3">
+                  <h5 class="font-size-12px-lg-16px text-grey "><%= pizza.name %></h5>
+                  <p class="font-size-12px-lg-16px text-grey "><%= pizza.ingredient %></p>
+                </div>
               </div>
             </div>
           </div>
         <% end %>
       </div>
-    <% end %>
-  </div>
-</div>
-</div>
-<div class="bg-dark">
-  <div class="frame-200px position-relative">
-
-  </div>
-  <div class="container">
-    <div class="row py-5">
-      <% @pizzas.each do |pizza|%>
-        <div class="col-12 col-md-6 col-lg-4 p-0 position-relative overflow-hidden">
-          <div class="trapezoid"><p class='mt-2 text-white'><%= pizza.price %>€</p></div>
-          <div class="p-1 ">
-            <div class="card">
-              <%= link_to "", pizza_path(pizza), class: "link_invisible" %>
-              <%= cl_image_tag pizza.photo, class: 'card-img-top w-100' %>
-              <div class="card-body py-3">
-                <h5 class="font-size-12px-lg-16px text-grey "><%= pizza.name %></h5>
-                <p class="font-size-12px-lg-16px text-grey "><%= pizza.ingredient.join(', ') %></p>
+    </div>
+    <div id="pasta-target" class='d-none'>
+      <div class="row py-5">
+        <% @pastas.each do |pasta|%>
+          <div class="col-12 col-md-6 col-lg-4 p-0 position-relative overflow-hidden">
+            <div class="trapezoid"><p class='mt-2 text-white'><%= pasta.price %>€</p></div>
+            <div class="p-1 ">
+              <div class="card">
+                <%= link_to "", meal_path(pasta), class: "link_invisible" %>
+                <%= cl_image_tag pasta.photo, class: 'card-img-top rogner', height: '200px' %>
+                <div class="card-body min-height-128px py-3">
+                  <h5 class="font-size-12px-lg-16px text-grey "><%= pasta.name %></h5>
+                  <p class="font-size-12px-lg-16px text-grey "><%= pasta.ingredient %></p>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      <% end %>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>

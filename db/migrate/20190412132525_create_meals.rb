@@ -2,7 +2,7 @@ class CreateMeals < ActiveRecord::Migration[5.2]
   def change
     create_table :meals do |t|
       t.string :name
-      t.string :ingredient, array: true
+      t.string :ingredient
       t.integer :price_cents
       t.string :photo
       t.string :description

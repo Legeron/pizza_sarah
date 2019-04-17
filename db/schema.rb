@@ -23,7 +23,7 @@ ActiveRecord::Schema.define(version: 2019_04_12_132525) do
 
   create_table "meals", force: :cascade do |t|
     t.string "name"
-    t.string "ingredient", array: true
+    t.string "ingredient"
     t.integer "price_cents"
     t.string "photo"
     t.string "description"
