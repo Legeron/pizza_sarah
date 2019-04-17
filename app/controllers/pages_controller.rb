@@ -3,5 +3,6 @@ class PagesController < ApplicationController
   def home
     @pizzas = MealCategory.pizzas
     @pastas = MealCategory.pastas
+    @desserts = MealCategory.desserts
   end
 end

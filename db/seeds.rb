@@ -34,3 +34,17 @@ bolo.save
 saumon = Meal.new(name: 'saumon', ingredient: 'crème citronnée, saumon°, basilic séché, parmesan', meal_category: pasta, price_cents: 800)
 saumon.remote_photo_url = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTP4NPOenLZ-znGKaGYW2rSLyUSz_562YO-nMe7DFpnmP_M7gIQVw"
 saumon.save
+
+dessert = MealCategory.create(name: "Dessert")
+
+tiramisu = Meal.new(name: 'Tiramisu', ingredient: '', meal_category: dessert, price_cents: 500)
+tiramisu.remote_photo_url = "http://www.pizza2buch.fr/Files/131040/Img/12/TIRAMISU.jpg"
+tiramisu.save
+
+crumble = Meal.new(name: 'Crumble', ingredient: '', meal_category: dessert, price_cents: 500)
+crumble.remote_photo_url = "http://www.pizza2buch.fr/Files/131040/Img/02/crumble-rhubarbe.jpg"
+crumble.save
+
+dame_blanche = Meal.new(name: 'Dame blanche', ingredient: '', meal_category: dessert, price_cents: 500)
+dame_blanche.remote_photo_url = "http://www.pizza2buch.fr/Files/131040/Img/12/2110-Z15.png"
+dame_blanche.save

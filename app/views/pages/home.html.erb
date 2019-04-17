@@ -5,12 +5,14 @@
     <% end %>
   </div>
 </div>
+<div style=" height: 70px"></div>
+<div class="active"></div>
 <div class="bg-dark">
   <div class="d-flex align-items-center bg-white">
     <div class="container">
       <button class= "m-2" id="pizza" data-controller='list' data-action='list#display'>Pizza</button>
       <button class= "m-2" id= 'pasta' data-controller='list' data-action='list#display'>Pâte</button>
-      <button class= "m-2">Dessert</button>
+      <button class= "m-2" id= 'dessert' data-controller='list' data-action='list#display'>Dessert</button>
     </div>
   </div>
   <div class="container display">
@@ -45,6 +47,25 @@
                 <div class="card-body min-height-128px py-3">
                   <h5 class="font-size-12px-lg-16px text-grey "><%= pasta.name %></h5>
                   <p class="font-size-12px-lg-16px text-grey "><%= pasta.ingredient %></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+    <div id="dessert-target" class='d-none'>
+      <div class="row py-5">
+        <% @desserts.each do |dessert|%>
+          <div class="col-12 col-md-6 col-lg-4 p-0 position-relative overflow-hidden">
+            <div class="trapezoid"><p class='mt-2 text-white'><%= dessert.price %>€</p></div>
+            <div class="p-1 ">
+              <div class="card">
+                <%= link_to "", meal_path(dessert), class: "link_invisible" %>
+                <%= cl_image_tag dessert.photo, class: 'card-img-top rogner', height: '200px' %>
+                <div class="card-body min-height-128px py-3">
+                  <h5 class="font-size-12px-lg-16px text-grey "><%= dessert.name %></h5>
+                  <p class="font-size-12px-lg-16px text-grey "><%= dessert.ingredient %></p>
                 </div>
               </div>
             </div>

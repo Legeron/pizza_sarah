@@ -8,6 +8,5 @@ export default class extends Controller {
     active.classList.add('d-none')
     target.classList.remove('d-none')
     target.classList.add('active')
-    console.log(this)
   }
 }
