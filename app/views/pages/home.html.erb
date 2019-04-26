@@ -74,11 +74,13 @@
     </div>
   </div>
  <!--  Below useless code to use data-target -->
-  <div class="container pb-5" data-controller='fight'>
-    <h2 class='mb-3 text-white'>Click on 'K' button</h2>
-    <p class= 'text-success mb-3' data-target= 'fight.hp'>100</p>
-    <button class='bg-success text-white px-3 py-2 rounded' data-action='click->fight#kick'>K</button>
+  <div class="container pb-5" data-controller='game'>
+    <h2 class='mb-3 text-white'>Click on 'P' button</h2>
+    <p class= 'text-success mb-3' data-target= 'game.score'>0</p>
+    <p class= 'text-success mb-3' data-target= 'game.bank'>0</p>
+    <button class='bg-success text-white px-3 py-2 rounded' data-action='click->game#pick'>P</button>
+    <button class='bg-info text-white px-3 py-2 rounded' data-action='click->game#result'>Bank</button>
      <!-- évènement 'click' est par défaut sur un button, ceci est un exemple pour la syntaxe  -->
-    <button class='bg-info d-none text-white px-3 py-2 rounded mx-2' data-action='click->fight#restart' data-target= 'fight.restart'>Restart</button>
+    <button class='bg-primary d-none text-white px-3 py-2 rounded mx-2' data-action='click->game#restart' data-target= 'game.restart'>Restart</button>
   </div>
 </div>

@@ -4,6 +4,12 @@ a:hover {
 .border-radius-10px {
   border-radius: 10px;
 }
+.shadow-large {
+   box-shadow: 0 15px 35px rgba(126,87,88,.1), 0 5px 15px rgba(0,0,0,.07);
+}
+.shadow-light {
+   box-shadow: 0 5px 10px rgba(126,87,88,.1), 0 5px 15px rgba(0,0,0,.07);
+}
 .link_invisible {
   position: absolute;
   top: 0;
