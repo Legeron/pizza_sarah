@@ -1,0 +1,8 @@
+function refreshModal(title, body) {
+  const modal = document.getElementById('modal');
+  modal.querySelector('.modal-body').innerHTML = body;
+  modal.querySelector('.modal-title').innerHTML = title;
+};
+
+refreshModal('<%= @user.email %>','<%= j render "shared/modal_content", user: @user %>');
+$('#modal').modal('show');
