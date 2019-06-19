@@ -1,2 +1,3 @@
-<p>latitude: <%= @user.latitude %></p>
-<p>longitude: <%= @user.longitude %></p>
+<p><%= @user.meal.name %></p>
+<p>ingredient : <%= @user.meal.ingredient %></p>
+<%= cl_image_tag @user.meal.photo, height: "100px" %>

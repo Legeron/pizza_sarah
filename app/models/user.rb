@@ -5,5 +5,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   geocoded_by :address
+  belongs_to :meal
   after_validation :geocode
 end

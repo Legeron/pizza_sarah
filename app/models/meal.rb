@@ -4,5 +4,6 @@ class Meal < ApplicationRecord
   validates :name, uniqueness: true
 
   monetize :price_cents
+  has_many :user
   mount_uploader :photo, PhotoUploader
 end
