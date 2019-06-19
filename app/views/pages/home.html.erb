@@ -1,7 +1,14 @@
-<div class="bg-white d-flex align-items-center shadow position-fixed w-100" style=" height: 70px; z-index: 20">
+<div class="bg-white d-flex justify-content-between align-items-center shadow position-fixed w-100" style=" height: 70px; z-index: 20">
   <div class="px-5">
     <%= link_to '/' do %>
       <%= image_tag 'logo-pizza-de-buch.jpg', alt: 'pizza', style: 'height: 60px' %>
+    <% end %>
+  </div>
+  <div class="px-5">
+    <% if user_signed_in? %>
+      <%= link_to "Se déconnecter", destroy_user_session_path, method: :delete, class: "btn btn-warning"  %>
+    <% else %>
+      <%= link_to "Se connecter", new_user_session_path, class: "btn btn-warning" %>
     <% end %>
   </div>
 </div>

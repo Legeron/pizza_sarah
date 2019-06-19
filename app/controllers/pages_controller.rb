@@ -3,13 +3,14 @@ class PagesController < ApplicationController
   def home
     @users = User.where.not(latitude: nil, longitude: nil)
 
-    @markers = @users.map do |user|
+    markers = @users.map do |user|
       {
         lat: user.latitude,
         lng: user.longitude,
         infoWindow: render_to_string(partial: "info_window", locals: { user: user.id })
       }
     end
+    @markers = current_user ? markers : []
     @pizzas = MealCategory.pizzas
     @pastas = MealCategory.pastas
     @desserts = MealCategory.desserts
